@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — DEV_ARCHITECT</title>
+  <meta name="description" content="Initiate contact with DEV_ARCHITECT." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="technical-grid">
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" data-bind="brand">DEV_ARCHITECT</a>
+
+      <ul class="nav-list" id="nav-menu" data-nav-menu>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" data-bind="linkedin">Experience</a></li>
+        <li><a class="nav-link is-active" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" aria-label="Terminal">
+          <span class="material-symbols-outlined">terminal</span>
+        </button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="main contact-main container">
+
+    <div class="contact-card">
+      <div class="contact-card-bar">
+        <div class="terminal-dots" aria-hidden="true">
+          <span style="background: var(--dot-red)"></span>
+          <span style="background: var(--dot-yellow)"></span>
+          <span style="background: var(--dot-green)"></span>
+        </div>
+        <div class="t-code t-muted" style="margin-left:16px">~/contact.sh</div>
+      </div>
+
+      <div class="contact-card-inner">
+        <h1 class="contact-title">INITIATE<br />CONTACT.</h1>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input class="terminal-input" id="name" name="name" type="text" placeholder="Enter your designation" autocomplete="name" />
+            <span class="cursor is-hidden" aria-hidden="true"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input class="terminal-input" id="email" name="email" type="email" placeholder="user@domain.com" autocomplete="email" />
+            <span class="cursor is-hidden" aria-hidden="true"></span>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea class="terminal-input" id="message" name="message" rows="4" placeholder="Transmit payload here..."></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit">
+            <span>EXECUTE</span>
+            <span class="material-symbols-outlined" style="font-size:16px">send</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Social links -->
+    <div class="social-grid">
+      <a class="social-card" data-bind="github">
+        <span class="social-tag">LINK_01</span>
+        <span class="social-name">GITHUB</span>
+      </a>
+      <a class="social-card" data-bind="linkedin">
+        <span class="social-tag">LINK_02</span>
+        <span class="social-name">LINKEDIN</span>
+      </a>
+      <a class="social-card" data-bind="twitter">
+        <span class="social-tag">LINK_03</span>
+        <span class="social-name">TWITTER</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">© 2024 <span data-bind="brand">DEV_ARCHITECT</span>. BUILT WITH PRECISION.</div>
+    </div>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>

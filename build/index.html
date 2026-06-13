@@ -1,24 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boris</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif; /* Clean, modern font */
-            font-size: 1rem;        /* Makes the text easily readable */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEV_ARCHITECT — Home</title>
+  <meta name="description" content="DEV_ARCHITECT — engineering robust, scalable architectures for the web." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body>
+<body class="technical-grid">
 
-    boris barac
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" data-bind="brand">DEV_ARCHITECT</a>
 
+      <ul class="nav-list" id="nav-menu" data-nav-menu>
+        <li><a class="nav-link is-active" href="index.html">Home</a></li>
+        <li><a class="nav-link" data-bind="linkedin">Experience</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" aria-label="Terminal">
+          <span class="material-symbols-outlined">terminal</span>
+        </button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="main container">
+
+    <!-- Hero -->
+    <section class="hero section-rule">
+      <div class="scan-line" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div>
+          <div class="hero-status t-code">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>SYSTEM.STATUS: ONLINE</span>
+          </div>
+          <h1 class="hero-title">
+            ENGINEERING<br />
+            <span class="t-accent">ARCHITECTURES</span><br />
+            FOR THE WEB.
+          </h1>
+          <p class="hero-desc">
+            Specializing in robust, scalable systems and zero-latency interfaces.
+            Transforming complex technical requirements into elegant, high-performance solutions.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="contact.html">
+              <span class="material-symbols-outlined">terminal</span>
+              Execute Contact
+            </a>
+          </div>
+        </div>
+        <div class="hero-code" aria-hidden="true">
+<pre>function initSystem() {
+  const core = new Core();
+  core.connect(API_GATEWAY);
+
+  if(core.isReady) {
+    deploy();
+    monitor();
+  }
+}
+
+// AWAITING INPUT...</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Directory Index -->
+    <section class="section-rule" style="padding-block: var(--space-section);" id="featured">
+      <div class="section-head">
+        <h2>DIRECTORY.INDEX</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="bento">
+        <!-- Career Log (links to LinkedIn) -->
+        <a class="feature-block" data-bind="linkedin">
+          <span class="scan-fill" aria-hidden="true"></span>
+          <div class="feature-top">
+            <span class="tag t-code">02 // TIMELINE</span>
+            <span class="material-symbols-outlined">history</span>
+          </div>
+          <div class="feature-body">
+            <h3 class="feature-title glitch-hover">Career<br />Log</h3>
+            <p class="t-body">Professional trajectory and technical roles. View the full record on LinkedIn.</p>
+          </div>
+        </a>
+
+        <!-- Skill focus -->
+        <div class="skill-block">
+          <div class="skill-head t-code">
+            <span class="material-symbols-outlined">database</span>
+            <span>BACKEND</span>
+          </div>
+          <div>
+            <div class="skill-value t-body">Node.js / Go / PostgreSQL</div>
+            <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-head t-code">
+            <span class="material-symbols-outlined">web</span>
+            <span>FRONTEND</span>
+          </div>
+          <div>
+            <div class="skill-value t-body">React / TypeScript / WebGL</div>
+            <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-head t-code">
+            <span class="material-symbols-outlined">cloud</span>
+            <span>INFRA</span>
+          </div>
+          <div>
+            <div class="skill-value t-body">AWS / Docker / CI-CD</div>
+            <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="section-rule" style="padding-block: var(--space-section);" id="stack">
+      <div class="section-head">
+        <h2>SYS.DEPENDENCIES</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dots" aria-hidden="true">
+            <span style="background: var(--dot-red)"></span>
+            <span style="background: var(--dot-yellow)"></span>
+            <span style="background: var(--dot-green)"></span>
+          </div>
+          <span class="t-code t-muted">bash — admin@dev_architect:~</span>
+        </div>
+        <div class="terminal-body">
+          <p class="t-code t-muted terminal-prompt">$ cat current_stack.json</p>
+
+          <div class="stack-grid">
+            <div class="stack-group">
+              <h4>LANGUAGES</h4>
+              <ul>
+                <li><span class="stack-name">TypeScript</span><span class="stack-ver">v5.x</span></li>
+                <li><span class="stack-name">JavaScript</span><span class="stack-ver">ES6+</span></li>
+                <li><span class="stack-name">Go</span><span class="stack-ver">1.21</span></li>
+                <li><span class="stack-name">Python</span><span class="stack-ver">3.10</span></li>
+              </ul>
+            </div>
+            <div class="stack-group">
+              <h4>FRAMEWORKS</h4>
+              <ul>
+                <li><span class="stack-name">React</span><span class="stack-ver">Core</span></li>
+                <li><span class="stack-name">Next.js</span><span class="stack-ver">App Router</span></li>
+                <li><span class="stack-name">Express</span><span class="stack-ver">REST</span></li>
+                <li><span class="stack-name">Tailwind CSS</span><span class="stack-ver">Utility</span></li>
+              </ul>
+            </div>
+            <div class="stack-group">
+              <h4>DATABASES</h4>
+              <ul>
+                <li><span class="stack-name">PostgreSQL</span><span class="stack-ver">Relational</span></li>
+                <li><span class="stack-name">MongoDB</span><span class="stack-ver">Document</span></li>
+                <li><span class="stack-name">Redis</span><span class="stack-ver">Cache</span></li>
+                <li><span class="stack-name">Prisma</span><span class="stack-ver">ORM</span></li>
+              </ul>
+            </div>
+            <div class="stack-group">
+              <h4>TOOLS</h4>
+              <ul>
+                <li><span class="stack-name">Git</span><span class="stack-ver">VCS</span></li>
+                <li><span class="stack-name">Docker</span><span class="stack-ver">Containers</span></li>
+                <li><span class="stack-name">AWS</span><span class="stack-ver">Cloud</span></li>
+                <li><span class="stack-name">Figma</span><span class="stack-ver">Design</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="terminal-cursor t-code">
+            <span>$</span>
+            <span class="blink" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">© 2024 <span data-bind="brand">DEV_ARCHITECT</span>. BUILT WITH PRECISION.</div>
+    </div>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/main.js"></script>
 </body>
 </html>
