@@ -1,24 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boris</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif; /* Clean, modern font */
-            font-size: 1rem;        /* Makes the text easily readable */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>boris.barac — Senior Systems Engineer</title>
+  <meta name="description" content="Boris Barac — senior systems engineer. Ten years architecting and scaling platforms for millions of users, from legacy monoliths to multi-agent AI systems. Prague, CZ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body>
+<body class="technical-grid">
 
-    boris barac
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" data-bind="brand">DEV_ARCHITECT</a>
 
+      <ul class="nav-list" id="nav-menu" data-nav-menu>
+        <li><a class="nav-link is-active" href="index.html">Home</a></li>
+        <li><a class="nav-link" data-bind="linkedin">LinkedIn</a></li>
+        <li><a class="nav-link" data-bind="github">GitHub</a></li>
+        <li><a class="nav-link" data-bind="blog">Blog</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" aria-label="Terminal">
+          <span class="material-symbols-outlined">terminal</span>
+        </button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="main container">
+
+    <!-- Hero -->
+    <section class="hero section-rule">
+      <div class="scan-line" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div>
+          <div class="hero-status t-code">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>// SENIOR SYSTEMS ENGINEER · PRAGUE, CZ</span>
+          </div>
+          <h1 class="hero-title" data-bind-html="profileHero"></h1>
+          <p class="hero-desc" data-bind="profileDesc"></p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="contact.html">
+              <span class="material-symbols-outlined">terminal</span>
+              Execute Contact
+            </a>
+            <a class="btn btn-ghost" data-bind="github">
+              <span class="material-symbols-outlined">code</span>
+              View Source
+            </a>
+          </div>
+        </div>
+        <div class="hero-code" aria-hidden="true">
+<pre>// stack.config
+const boris = {
+  role: "Senior Systems Engineer",
+  location: "Prague, CZ",
+  focus: [
+    "LLM serving",
+    "Rust / N-API",
+    "Agentic systems",
+  ],
+  shipped: "10y · millions of users",
+};
+
+// AWAITING INPUT...</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile (rendered from profile.md) -->
+    <section class="section-rule" style="padding-block: var(--space-section);" id="profile">
+      <div class="section-head">
+        <h2>PROFILE.MD</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dots" aria-hidden="true">
+            <span style="background: var(--dot-red)"></span>
+            <span style="background: var(--dot-yellow)"></span>
+            <span style="background: var(--dot-green)"></span>
+          </div>
+          <span class="t-code t-muted">bash — boris@barac:~</span>
+        </div>
+        <div class="terminal-body">
+          <p class="t-code t-muted terminal-prompt">$ cat profile.md</p>
+          <div id="md-content" class="md-content"></div>
+          <div class="terminal-cursor t-code">
+            <span>$</span>
+            <span class="blink" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">© 2025 <span data-bind="brand">DEV_ARCHITECT</span> · PRAGUE, CZ</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/main.js"></script>
 </body>
 </html>
