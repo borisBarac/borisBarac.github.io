@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DEV_ARCHITECT — Home</title>
-  <meta name="description" content="DEV_ARCHITECT — engineering robust, scalable architectures for the web." />
+  <title>boris.barac — Senior Systems Engineer</title>
+  <meta name="description" content="Boris Barac — senior systems engineer. Ten years architecting and scaling platforms for millions of users, from legacy monoliths to multi-agent AI systems. Prague, CZ." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -20,7 +20,9 @@
 
       <ul class="nav-list" id="nav-menu" data-nav-menu>
         <li><a class="nav-link is-active" href="index.html">Home</a></li>
-        <li><a class="nav-link" data-bind="linkedin">Experience</a></li>
+        <li><a class="nav-link" data-bind="linkedin">LinkedIn</a></li>
+        <li><a class="nav-link" data-bind="github">GitHub</a></li>
+        <li><a class="nav-link" data-bind="blog">Blog</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
 
@@ -45,101 +47,43 @@
         <div>
           <div class="hero-status t-code">
             <span class="status-dot" aria-hidden="true"></span>
-            <span>SYSTEM.STATUS: ONLINE</span>
+            <span>// SENIOR SYSTEMS ENGINEER · PRAGUE, CZ</span>
           </div>
-          <h1 class="hero-title">
-            ENGINEERING<br />
-            <span class="t-accent">ARCHITECTURES</span><br />
-            FOR THE WEB.
-          </h1>
-          <p class="hero-desc">
-            Specializing in robust, scalable systems and zero-latency interfaces.
-            Transforming complex technical requirements into elegant, high-performance solutions.
-          </p>
+          <h1 class="hero-title" data-bind-html="profileHero"></h1>
+          <p class="hero-desc" data-bind="profileDesc"></p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="contact.html">
               <span class="material-symbols-outlined">terminal</span>
               Execute Contact
             </a>
+            <a class="btn btn-ghost" data-bind="github">
+              <span class="material-symbols-outlined">code</span>
+              View Source
+            </a>
           </div>
         </div>
         <div class="hero-code" aria-hidden="true">
-<pre>function initSystem() {
-  const core = new Core();
-  core.connect(API_GATEWAY);
-
-  if(core.isReady) {
-    deploy();
-    monitor();
-  }
-}
+<pre>// stack.config
+const boris = {
+  role: "Senior Systems Engineer",
+  location: "Prague, CZ",
+  focus: [
+    "LLM serving",
+    "Rust / N-API",
+    "Agentic systems",
+  ],
+  shipped: "10y · millions of users",
+};
 
 // AWAITING INPUT...</pre>
         </div>
       </div>
     </section>
 
-    <!-- Directory Index -->
-    <section class="section-rule" style="padding-block: var(--space-section);" id="featured">
+    <!-- Profile (rendered from profile.md) -->
+    <section class="section-rule" style="padding-block: var(--space-section);" id="profile">
       <div class="section-head">
-        <h2>DIRECTORY.INDEX</h2>
-        <div class="rule"></div>
-      </div>
-
-      <div class="bento">
-        <!-- Career Log (links to LinkedIn) -->
-        <a class="feature-block" data-bind="linkedin">
-          <span class="scan-fill" aria-hidden="true"></span>
-          <div class="feature-top">
-            <span class="tag t-code">02 // TIMELINE</span>
-            <span class="material-symbols-outlined">history</span>
-          </div>
-          <div class="feature-body">
-            <h3 class="feature-title glitch-hover">Career<br />Log</h3>
-            <p class="t-body">Professional trajectory and technical roles. View the full record on LinkedIn.</p>
-          </div>
-        </a>
-
-        <!-- Skill focus -->
-        <div class="skill-block">
-          <div class="skill-head t-code">
-            <span class="material-symbols-outlined">database</span>
-            <span>BACKEND</span>
-          </div>
-          <div>
-            <div class="skill-value t-body">Node.js / Go / PostgreSQL</div>
-            <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
-          </div>
-        </div>
-
-        <div class="skill-block">
-          <div class="skill-head t-code">
-            <span class="material-symbols-outlined">web</span>
-            <span>FRONTEND</span>
-          </div>
-          <div>
-            <div class="skill-value t-body">React / TypeScript / WebGL</div>
-            <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
-          </div>
-        </div>
-
-        <div class="skill-block">
-          <div class="skill-head t-code">
-            <span class="material-symbols-outlined">cloud</span>
-            <span>INFRA</span>
-          </div>
-          <div>
-            <div class="skill-value t-body">AWS / Docker / CI-CD</div>
-            <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stack -->
-    <section class="section-rule" style="padding-block: var(--space-section);" id="stack">
-      <div class="section-head">
-        <h2>SYS.DEPENDENCIES</h2>
+        <h2>PROFILE.MD</h2>
         <div class="rule"></div>
       </div>
 
@@ -150,50 +94,11 @@
             <span style="background: var(--dot-yellow)"></span>
             <span style="background: var(--dot-green)"></span>
           </div>
-          <span class="t-code t-muted">bash — admin@dev_architect:~</span>
+          <span class="t-code t-muted">bash — boris@barac:~</span>
         </div>
         <div class="terminal-body">
-          <p class="t-code t-muted terminal-prompt">$ cat current_stack.json</p>
-
-          <div class="stack-grid">
-            <div class="stack-group">
-              <h4>LANGUAGES</h4>
-              <ul>
-                <li><span class="stack-name">TypeScript</span><span class="stack-ver">v5.x</span></li>
-                <li><span class="stack-name">JavaScript</span><span class="stack-ver">ES6+</span></li>
-                <li><span class="stack-name">Go</span><span class="stack-ver">1.21</span></li>
-                <li><span class="stack-name">Python</span><span class="stack-ver">3.10</span></li>
-              </ul>
-            </div>
-            <div class="stack-group">
-              <h4>FRAMEWORKS</h4>
-              <ul>
-                <li><span class="stack-name">React</span><span class="stack-ver">Core</span></li>
-                <li><span class="stack-name">Next.js</span><span class="stack-ver">App Router</span></li>
-                <li><span class="stack-name">Express</span><span class="stack-ver">REST</span></li>
-                <li><span class="stack-name">Tailwind CSS</span><span class="stack-ver">Utility</span></li>
-              </ul>
-            </div>
-            <div class="stack-group">
-              <h4>DATABASES</h4>
-              <ul>
-                <li><span class="stack-name">PostgreSQL</span><span class="stack-ver">Relational</span></li>
-                <li><span class="stack-name">MongoDB</span><span class="stack-ver">Document</span></li>
-                <li><span class="stack-name">Redis</span><span class="stack-ver">Cache</span></li>
-                <li><span class="stack-name">Prisma</span><span class="stack-ver">ORM</span></li>
-              </ul>
-            </div>
-            <div class="stack-group">
-              <h4>TOOLS</h4>
-              <ul>
-                <li><span class="stack-name">Git</span><span class="stack-ver">VCS</span></li>
-                <li><span class="stack-name">Docker</span><span class="stack-ver">Containers</span></li>
-                <li><span class="stack-name">AWS</span><span class="stack-ver">Cloud</span></li>
-                <li><span class="stack-name">Figma</span><span class="stack-ver">Design</span></li>
-              </ul>
-            </div>
-          </div>
-
+          <p class="t-code t-muted terminal-prompt">$ cat profile.md</p>
+          <div id="md-content" class="md-content"></div>
           <div class="terminal-cursor t-code">
             <span>$</span>
             <span class="blink" aria-hidden="true"></span>
@@ -207,10 +112,11 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-copy">© 2024 <span data-bind="brand">DEV_ARCHITECT</span>. BUILT WITH PRECISION.</div>
+      <div class="footer-copy">© 2025 <span data-bind="brand">DEV_ARCHITECT</span> · PRAGUE, CZ</div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
   <script src="assets/config.js"></script>
   <script src="assets/main.js"></script>
 </body>

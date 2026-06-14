@@ -11,23 +11,48 @@
     contact: links.contact,
     linkedin: links.linkedin,
     github: links.github,
-    twitter: links.twitter,
+    blog: links.blog,
     sourceCode: links.sourceCode,
+    profileDesc: window.PROFILE_DESC,
   };
+
+  // HTML bindings (opt-in via data-bind-html). Injects markup, so only use
+  // for trusted config values authored alongside this file.
+  var htmlBindings = {
+    profileHero: window.PROFILE_HERO,
+  };
+
+  // Keep document.title in sync with config (brand + role) — home page only,
+  // so we don't clobber page-specific titles like contact.html's.
+  if (window.PROFILE_ROLE && document.getElementById("md-content")) {
+    document.title = cfg.brand + " — " + window.PROFILE_ROLE;
+  }
 
   document.querySelectorAll("[data-bind]").forEach(function (el) {
     var key = el.getAttribute("data-bind");
     var value = bindings[key];
     if (value == null) return;
     if (el.tagName === "A") {
-      el.setAttribute("href", key === "email" ? "mailto:" + value : value);
+      if (key === "brand") {
+        el.textContent = value;
+      } else {
+        el.setAttribute("href", key === "email" ? "mailto:" + value : value);
+      }
     } else {
       el.textContent = value;
     }
   });
 
-  // Mark external link targets (LinkedIn / GitHub / Twitter / Source) as new tabs.
-  ["linkedin", "github", "twitter", "sourceCode"].forEach(function (key) {
+  // HTML bindings (data-bind-html) — injects trusted markup from config.
+  document.querySelectorAll("[data-bind-html]").forEach(function (el) {
+    var key = el.getAttribute("data-bind-html");
+    var value = htmlBindings[key];
+    if (value == null) return;
+    el.innerHTML = value;
+  });
+
+  // Mark external link targets (LinkedIn / GitHub / Blog / Source) as new tabs.
+  ["linkedin", "github", "blog", "sourceCode"].forEach(function (key) {
     document.querySelectorAll('[data-bind="' + key + '"]').forEach(function (el) {
       if (el.tagName === "A" && /^(https?:)?\/\//i.test(el.getAttribute("href") || "")) {
         el.setAttribute("target", "_blank");
@@ -86,5 +111,23 @@
       );
       window.location.href = "mailto:" + cfg.email + "?subject=" + subject + "&body=" + body;
     });
+  }
+
+  // Render profile markdown into #md-content (home page only).
+  var mdEl = document.getElementById("md-content");
+  if (mdEl && typeof window.PROFILE_MD === "string") {
+    if (window.marked && typeof marked.parse === "function") {
+      mdEl.innerHTML = marked.parse(window.PROFILE_MD, { breaks: false, gfm: true });
+      // Open external links rendered from the markdown in a new tab.
+      mdEl.querySelectorAll('a[href^="http"]').forEach(function (a) {
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      });
+    } else {
+      // No parser available — fall back to plain preformatted text.
+      var pre = document.createElement("pre");
+      pre.textContent = window.PROFILE_MD;
+      mdEl.replaceChildren(pre);
+    }
   }
 })();
